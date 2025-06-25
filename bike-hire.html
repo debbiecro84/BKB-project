@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Hire - Bike King Borders</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header" id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/Bike_King_Borders_transparent.png" alt="Bike King Borders Logo">
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="our-shop.html">Our Shop</a></li>
+                    <li><a href="bike-hire.html" class="active">Bike Hire</a></li>
+                    <li><a href="bike-servicing.html">Bike Servicing</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-bar" placeholder="Search products..." id="search-input">
+                    <div class="search-results" id="search-results">
+                        <!-- Search results will appear here -->
+                    </div>
+                </div>
+                <button class="basket-icon" id="basket-icon" aria-label="Shopping basket">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span class="basket-count" id="basket-count">0</span>
+                </button>
+            </div>
+            <button class="menu-toggle" id="mobile-menu" aria-label="Open navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="images/cover.jpg" alt="Bike Hire" class="hero-background">
+            <div class="hero-content">
+                <h1>Bike Hire</h1>
+                <p>Rent high-quality bikes for your adventure in the Scottish Borders.</p>
+                <a href="#hire-content" class="btn btn-primary">View Bikes</a>
+            </div>
+        </section>
+
+        <section class="content-section" id="hire-content">
+            <div class="container">
+                <h2 class="section-title">Available Bikes</h2>
+                <p class="section-subtitle">Choose from our extensive range of bikes suitable for all ages and skill levels.</p>
+                
+                <div class="info-grid">
+                    <div class="info-card" data-category="mountain-bikes">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/300x200.png?text=Mountain+Bikes" alt="Mountain Bikes" class="card-img">
+                        </div>
+                        <i class="fas fa-mountain icon"></i>
+                        <h3>Mountain Bikes</h3>
+                        <p>Full suspension and hardtail options for trail riding.</p>
+                        <button class="btn btn-primary">View Bikes</button>
+                    </div>
+                    <div class="info-card" data-category="road-bikes">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/300x200.png?text=Road+Bikes" alt="Road Bikes" class="card-img">
+                        </div>
+                        <i class="fas fa-road icon"></i>
+                        <h3>Road Bikes</h3>
+                        <p>Lightweight road bikes for touring and fitness.</p>
+                        <button class="btn btn-primary">View Bikes</button>
+                    </div>
+                    <div class="info-card" data-category="kids-bikes">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/300x200.png?text=Kids+Bikes" alt="Kids Bikes" class="card-img">
+                        </div>
+                        <i class="fas fa-child icon"></i>
+                        <h3>Kids Bikes</h3>
+                        <p>Safe and fun bikes for children of all ages.</p>
+                        <button class="btn btn-primary">View Bikes</button>
+                    </div>
+                    <div class="info-card" data-category="electric-bikes">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/300x200.png?text=Electric+Bikes" alt="Electric Bikes" class="card-img">
+                        </div>
+                        <i class="fas fa-cog icon"></i>
+                        <h3>Electric Bikes</h3>
+                        <p>E-bikes for assisted riding and longer journeys.</p>
+                        <button class="btn btn-primary">View Bikes</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bike Hire Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title">Available Bikes</h2>
+            <div id="modal-products" class="modal-products-grid">
+                <!-- Bikes will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Basket Modal -->
+    <div id="basket-modal" class="modal">
+        <div class="modal-content basket-modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="basket-title">Shopping Basket</h2>
+            <div id="basket-items" class="basket-items">
+                <!-- Basket items will be loaded here dynamically -->
+            </div>
+            <div class="basket-summary">
+                <div class="basket-total">
+                    <span>Total: £<span id="basket-total">0.00</span></span>
+                </div>
+                <div class="basket-actions">
+                    <button class="btn btn-secondary" id="clear-basket">Clear Basket</button>
+                    <button class="btn btn-primary" id="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>"A journey of a thousand miles begins with a single pedal"</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="our-shop.html">Our Shop</a></li>
+                        <li><a href="bike-hire.html">Bike Hire</a></li>
+                        <li><a href="bike-servicing.html">Bike Servicing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Review Us</h3>
+                    <a href="#">TripAdvisor</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2023 Bike King Borders. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/models.js"></script>
+    <script src="js/image-api.js"></script>
+    <script src="js/basket.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
